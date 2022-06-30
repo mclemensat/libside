@@ -1,3 +1,4 @@
+
 import SearchBar from "@components/SearchBar";
 import CardTown from "@components/CardTown.jsx";
 import PostComponent from "@components/PostComponent";
