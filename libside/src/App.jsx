@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/homepage";
 import Post from "./pages/Post";
+import ComponentDetails from "./pages/ComponentDetails";
 import ResearchPage from "./pages/ResearchPage";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post" element={<Post />} />
+        <Route path="/component-details" element={<ComponentDetails />} />
         <Route path="/research" element={<ResearchPage />} />
       </Routes>
     </div>

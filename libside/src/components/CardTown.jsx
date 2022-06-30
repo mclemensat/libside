@@ -68,8 +68,8 @@ export default function CardTown() {
   };
 
   return (
-    <div className="bg-white relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
-      <div className="relative max-w-7xl mx-auto">
+    <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
+      <div className="relative max-w-4xl mx-auto">
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
             <div
