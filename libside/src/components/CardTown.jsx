@@ -1,12 +1,13 @@
-/* This example requires Tailwind CSS v2.0+ */
+import { useState } from "react";
+
 const posts = [
   {
     title: "Nantes",
     href: "#",
     category: { name: "Component", href: "#" },
     description: "Searches for a random avatar component",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
+    date: "Jun 29, 2022",
+    datetime: "2022-06-29",
 
     readingTime: "6 min",
     author: {
@@ -16,26 +17,12 @@ const posts = [
     },
   },
   {
-    title: "Bordeaux",
-    href: "#",
-    category: { name: "Component", href: "#" },
-    description: "Looks for a label scan component",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    readingTime: "4 min",
-    author: {
-      name: "Team Bdx",
-      href: "#",
-      imageUrl: "../src/assets/file_type_css_icon_130661.png",
-    },
-  },
-  {
     title: "Nice",
     href: "#",
     category: { name: "Component", href: "#" },
     description: "Search for an MDP Middleware component",
-    date: "Feb 12, 2020",
-    datetime: "2020-02-12",
+    date: "Jun 30, 2022",
+    datetime: "2022-06-30",
 
     readingTime: "11 min",
     author: {
@@ -44,11 +31,44 @@ const posts = [
       imageUrl: "../src/assets/file_type_html_icon_130541.png",
     },
   },
+  {
+    title: "Bordeaux",
+    href: "#",
+    category: { name: "Component", href: "#" },
+    description: "Looks for a label scan component",
+    date: "Jul 01, 2022",
+    datetime: "2022-07-01",
+    author: {
+      name: "Team Bdx",
+      href: "#",
+      imageUrl: "../src/assets/file_type_css_icon_130661.png",
+    },
+  },
 ];
 
 export default function CardTown() {
+  const [answer, setAnswer] = useState({});
+  const [submittedAnswer, setSubmittedAnswer] = useState([]);
+  console.log(submittedAnswer);
+
+  const handleChange = (key, value) => {
+    setAnswer({ ...answer, [key]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    submittedAnswer.push(answer);
+
+    setSubmittedAnswer(submittedAnswer);
+
+    setAnswer({
+      answer: "",
+    });
+  };
+
   return (
-    <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
+    <div className="bg-white relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
       <div className="relative max-w-7xl mx-auto">
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
@@ -72,7 +92,9 @@ export default function CardTown() {
                     </p>
                   </a>
                 </div>
-                <div className="mt-6 flex items-center">
+              </div>
+              <div className="flex justify-center mb-4">
+                <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <a href={post.author.href}>
                       <span className="sr-only">{post.author.name}</span>
@@ -91,11 +113,33 @@ export default function CardTown() {
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-500">
                       <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime} read</span>
                     </div>
                   </div>
                 </div>
+              </div>
+              <form onSubmit={handleSubmit}>
+                <div className="text-left ml-[85px]">
+                  <label className="text-sm">Help the team:</label>
+                </div>
+                <div className="text-center">
+                  <input
+                    id="aswer"
+                    name="answer"
+                    value={answer.answer}
+                    onChange={(e) => handleChange(answer, e.target.value)}
+                    className="mb-2 w-48 bg-slate-200"
+                  ></input>
+                </div>
+              </form>
+
+              <div>
+                <ul>
+                  {submittedAnswer.map((a, index) => (
+                    <li key={index}>
+                      <div>{a.answer}</div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
