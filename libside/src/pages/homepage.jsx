@@ -5,18 +5,15 @@ import NewsBoard from "@components/NewsBoard";
 
 function HomePage() {
   return (
-    <div className="">
-      <div></div>
-      <div className="flex flex-around p-10 w-full">
-        <div className="py-20  ">
-          <SearchBar />
-          <PostComponent />
-          <CardTown />
-        </div>
+    <div className="flex">
+      <div className="flex flex-col">
+        <SearchBar />
+        <PostComponent />
+        <CardTown />
+      </div>
 
-        <div className="md:w-1/4 md:right-0 md:absolute">
-          <NewsBoard />
-        </div>
+      <div className="mx-8 my-10">
+        <NewsBoard />
       </div>
     </div>
   );

@@ -68,17 +68,17 @@ export default function CardTown() {
   };
 
   return (
-    <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
+    <div className="rounded-xl backdrop-blur-xl ring-1 ring-gray-300 p-6">
       <div className="relative max-w-4xl mx-auto">
-        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <div className="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
             <div
               key={post.title}
-              className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+              className="flex flex-col bg-white  rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div className="flex-1 mb-3 bg-white border-b-2 border-dotted border-gray-100 p-6 flex flex-col justify-between">
                 <div>
-                  <p className="text-sm font-medium text-indigo-600">
+                  <p className="text-sm font-medium text-primary">
                     <a href={post.category.href} className="hover:underline">
                       {post.category.name}
                     </a>

@@ -2,7 +2,7 @@ import NewsCard from "./NewsCard";
 
 function NewsBoard() {
   return (
-    <div className="flex flex-col items-center rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
+    <div className="flex flex-col items-center w-96 rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
       <NewsCard
         city={"Rennes"}
         techno={"React"}
@@ -12,7 +12,7 @@ function NewsBoard() {
         }
       />
       <NewsCard
-        city={"MontPellier"}
+        city={"Montpellier"}
         techno={"Java"}
         title={"BigData for science"}
         text={
