@@ -7,6 +7,7 @@ function HomePage() {
   return (
     <div className="">
       <div>
+        <Nav />
       </div>
       <div className="flex flex-around p-10 w-full">
         <div className="py-20  ">
