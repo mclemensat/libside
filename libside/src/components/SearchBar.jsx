@@ -49,7 +49,7 @@ function SearchBar() {
               Select language
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={firstOptions}
               name="first"
@@ -61,7 +61,7 @@ function SearchBar() {
               Second Options
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={secondOptions}
               name="second"

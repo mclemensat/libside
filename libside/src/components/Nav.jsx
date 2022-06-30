@@ -44,7 +44,7 @@ export default function Nav() {
                 <a href="/">About</a>
               </li>
               <li className="border-b border-gray-400 ">
-                <a href="/">Page1</a>
+                <a href="/post">Page1</a>
               </li>
               <li className="border-b border-gray-400">
                 <a href="/">Page2</a>
@@ -59,7 +59,7 @@ export default function Nav() {
             <a href="/">About</a>
           </li>
           <li>
-            <a href="/">Page1</a>
+            <a href="/post">Page1</a>
           </li>
           <li>
             <a href="/">page2</a>
