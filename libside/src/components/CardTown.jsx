@@ -48,23 +48,28 @@ const posts = [
 
 export default function CardTown() {
   const [answer, setAnswer] = useState({});
+  console.log(answer);
   const [submittedAnswer, setSubmittedAnswer] = useState([]);
   console.log(submittedAnswer);
 
-  const handleChange = (key, value) => {
-    setAnswer({ ...answer, [key]: value });
-  };
+  // const handleChange = ({ value }) => {
+  //   setAnswer({ ...answer, value });
+  //   //   ...submittedAnswer.map((ans) => {
+  //   //     if (ans.id) {
+  //   //       return { ...ans, [key]: value };
+  //   //     }
+
+  //   //     return ans;
+  //   //   }),
+  //   // ]);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    submittedAnswer.push(answer);
+    setSubmittedAnswer([answer]);
 
-    setSubmittedAnswer(submittedAnswer);
-
-    setAnswer({
-      answer: "",
-    });
+    e.target.reset();
   };
 
   return (
@@ -123,10 +128,10 @@ export default function CardTown() {
                 </div>
                 <div className="text-center">
                   <input
-                    id="aswer"
+                    id="answer"
                     name="answer"
                     value={answer.answer}
-                    onChange={(e) => handleChange(answer, e.target.value)}
+                    onChange={(e) => setAnswer(e.target.value)}
                     className="mb-2 w-48 bg-slate-200"
                   ></input>
                 </div>
@@ -135,9 +140,7 @@ export default function CardTown() {
               <div>
                 <ul>
                   {submittedAnswer.map((a, index) => (
-                    <li key={index}>
-                      <div>{a.answer}</div>
-                    </li>
+                    <li key={index}>{a}</li>
                   ))}
                 </ul>
               </div>
