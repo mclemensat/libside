@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
 import Nav from "@components/Nav";
 import CSS from "@assets/file_type_css_icon_130661.png";
+import Modal from "@components/Modal";
 
 export default function Post() {
   const [newPost, setNewPost] = useState({});
   const [submittedPosts, setSubmittedPosts] = useState([]);
+  const [shoMyModal,setShowMyModal]=useState(false)
 
-  const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
     setNewPost({ ...newPost, [name]: value });
@@ -26,10 +26,7 @@ export default function Post() {
     });
   };
 
-  const handleClick = () => {
-    
-    navigate("/modal");
-  };
+  const handleOnClose=()=>setShowMyModal(false)
 
   return (
     <div className="bg-gray-50">
@@ -117,7 +114,7 @@ export default function Post() {
                 Preview
               </button>
               <button
-                onClick={handleClick}
+              onClick={()=>setShowMyModal(true)}
                 className="mt-8 mx-12 rounded-md bg-primary hover:bg-secondary py-3 px-8 text-base font-semibold text-white outline-none"
               >
                 Post
@@ -182,6 +179,7 @@ export default function Post() {
           ))}
         </ul>
       </div>
+      <Modal onClose={handleOnClose} visible={shoMyModal}/>
     </div>
   );
 }
