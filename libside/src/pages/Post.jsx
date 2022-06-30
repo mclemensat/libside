@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Nav from "../components/Nav";
+import Nav from "@components/Nav";
 
 export default function Post() {
   const [newPost, setNewPost] = useState({});
@@ -158,7 +158,7 @@ export default function Post() {
                               <span className="sr-only">{post.team}</span>
                               <img
                                 className="h-10 w-10 rounded-full"
-                                src="../src/assets/file_type_css_icon_130661.png"
+                                src="@src/assets/file_type_css_icon_130661.png"
                                 alt="css-icon"
                               />
                             </a>
