@@ -31,19 +31,6 @@ const posts = [
       imageUrl: "../src/assets/file_type_html_icon_130541.png",
     },
   },
-  {
-    title: "Bordeaux",
-    href: "#",
-    category: { name: "Component", href: "#" },
-    description: "Looks for a label scan component",
-    date: "Jul 01, 2022",
-    datetime: "2022-07-01",
-    author: {
-      name: "Team Bdx",
-      href: "#",
-      imageUrl: "../src/assets/file_type_css_icon_130661.png",
-    },
-  },
 ];
 
 export default function CardTown() {
@@ -51,26 +38,18 @@ export default function CardTown() {
   const [submittedAnswer, setSubmittedAnswer] = useState([]);
   console.log(submittedAnswer);
 
-  const handleChange = (key, value) => {
-    setAnswer({ ...answer, [key]: value });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    submittedAnswer.push(answer);
+    setSubmittedAnswer([answer]);
 
-    setSubmittedAnswer(submittedAnswer);
-
-    setAnswer({
-      answer: "",
-    });
+    e.target.reset();
   };
 
   return (
-    <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
+    <div className="bg-white pb-20 px-4 sm:px-6 lg:pt-24 lg:px-8">
       <div className="relative max-w-4xl mx-auto">
-        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+        <div className="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
             <div
               key={post.title}
@@ -117,32 +96,133 @@ export default function CardTown() {
                   </div>
                 </div>
               </div>
-              <form onSubmit={handleSubmit}>
-                <div className="text-left ml-[85px]">
-                  <label className="text-sm">Help the team:</label>
+
+              <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200"></div>
+              <div
+                id="messages"
+                className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
+              >
+                <div className="chat-message">
+                  <div className="flex items-end justify-end">
+                    <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end"></div>
+                    <img
+                      src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                      alt="My profile"
+                      className="w-6 h-6 rounded-full order-2"
+                    />
+                  </div>
                 </div>
-                <div className="text-center">
+              </div>
+
+              <form>
+                <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
                   <input
-                    id="aswer"
+                    id="answer"
                     name="answer"
-                    value={answer.answer}
-                    onChange={(e) => handleChange(answer, e.target.value)}
-                    className="mb-2 w-48 bg-slate-200"
-                  ></input>
+                    type="text"
+                    value=""
+                    placeholder="Help the team!"
+                    className="w-full mb-2 focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
+                  />
+                  <div className="absolute right-0 items-center inset-y-0 hidden sm:flex"></div>
                 </div>
               </form>
-
-              <div>
-                <ul>
-                  {submittedAnswer.map((a, index) => (
-                    <li key={index}>
-                      <div>{a.answer}</div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           ))}
+
+          <div
+            key=""
+            className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+          >
+            <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div>
+                <p className="text-sm font-medium text-indigo-600">
+                  <a href="" className="hover:underline">
+                    Component
+                  </a>
+                </p>
+                <a href="" className="block mt-2">
+                  <p className="text-xl font-semibold text-gray-900">
+                    Bordeaux
+                  </p>
+                  <p className="mt-3 text-base text-gray-500">
+                    Looking for a label scan component
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center mb-4">
+              <div className="flex items-center">
+                <div className="flex-shrink-0">
+                  <a href="">
+                    <span className="sr-only">Team Bdx</span>
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src="../src/assets/file_type_css_icon_130661.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-gray-900">
+                    <a href="" className="hover:underline">
+                      Team Bdx
+                    </a>
+                  </p>
+                  <div className="flex space-x-1 text-sm text-gray-500">
+                    <time dateTime="{post.datetime}">Jul 01, 2022</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200"></div>
+              <div
+                id="messages"
+                className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
+              >
+                <div className="chat-message">
+                  <div className="flex items-end justify-end">
+                    <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+                      <div>
+                        <ul>
+                          {submittedAnswer.map((a, index) => (
+                            <li
+                              key={answer.id}
+                              className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white "
+                            >
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <img
+                      src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                      alt="My profile"
+                      className="w-6 h-6 rounded-full order-2"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit}>
+                <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
+                  <input
+                    id="answer"
+                    name="answer"
+                    type="text"
+                    value={answer.answer}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    placeholder="Help the team!"
+                    className="w-full mb-2 focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
+                  />
+                  <div className="absolute right-0 items-center inset-y-0 hidden sm:flex"></div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

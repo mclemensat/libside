@@ -33,7 +33,6 @@ export default function Post() {
 
   return (
     <div className="bg-gray-50">
-      <Nav />
       <br></br>
       <h1 className="mt-4 mb-12 text-4xl drop-shadow-lg uppercase text-center text-primary">
         Post an article

@@ -22,7 +22,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-primary">
+    <Disclosure as="nav" className="bg-red-800">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function Example() {
                     alt="Workflow"
                   /> */}
                   <img
-                    className="hidden lg:block h-12 w-12"
+                    className="  border border-red-400 lg:block h-12 w-12"
                     src={logo}
                     alt="Workflow"
                   />
