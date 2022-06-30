@@ -1,4 +1,4 @@
-import Nav from "@components/Nav";
+
 import News from "@components/News";
 import SearchBar from "@components/SearchBar";
 import CardTown from "@components/CardTown.jsx";

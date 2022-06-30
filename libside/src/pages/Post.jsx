@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom"
 import Nav from "@components/Nav";
+import CSS from "@assets/file_type_css_icon_130661.png";
 
 export default function Post() {
   const [newPost, setNewPost] = useState({});
@@ -27,8 +27,8 @@ export default function Post() {
   };
 
   const handleClick = () => {
-    alert("Article publié");
-    navigate("/");
+    
+    navigate("/modal");
   };
 
   return (
@@ -158,7 +158,7 @@ export default function Post() {
                               <span className="sr-only">{post.team}</span>
                               <img
                                 className="h-10 w-10 rounded-full"
-                                src="@src/assets/file_type_css_icon_130661.png"
+                                src={CSS}
                                 alt="css-icon"
                               />
                             </a>

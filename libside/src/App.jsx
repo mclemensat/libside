@@ -4,6 +4,7 @@ import HomePage from "@pages/homepage";
 import Post from "@pages/Post";
 import ComponentDetails from "@pages/ComponentDetails";
 import ResearchPage from "@pages/ResearchPage";
+import Modal from "@components/Modal";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/post" element={<Post />} />
         <Route path="/component-details" element={<ComponentDetails />} />
         <Route path="/research" element={<ResearchPage />} />
+        <Route path="/modal" element={<Modal/>}/>
       </Routes>
     </div>
   );
