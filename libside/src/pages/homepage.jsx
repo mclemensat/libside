@@ -10,7 +10,7 @@ function HomePage() {
       <div>
      <Nav/>
      </div>
-    <div className="flex flex-around p-10 w-full">
+    <div className="flex p-10 w-full">
      
     <div className="py-20  ">			
      <SearchBar /> 
