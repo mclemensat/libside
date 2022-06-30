@@ -49,6 +49,7 @@ const posts = [
 export default function CardTown() {
   const [answer, setAnswer] = useState({});
   const [submittedAnswer, setSubmittedAnswer] = useState([]);
+  console.log(submittedAnswer)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -108,27 +109,52 @@ export default function CardTown() {
                   </div>
                 </div>
               </div>
-              <form onSubmit={handleSubmit}>
-                <div className="text-left ml-[85px]">
-                  <label className="text-sm">Help the team:</label>
-                </div>
-                <div className="text-center">
-                  <input
-                    id="answer"
-                    name="answer"
-                    value={answer.answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                    className="mb-2 w-48 bg-slate-200"
-                  ></input>
-                </div>
-              </form>
 
-              <div>
-                <ul>
-                  {submittedAnswer.map((a, index) => (
-                    <li key={index}>{a}</li>
-                  ))}
-                </ul>
+              <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
+                <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200"></div>
+                <div
+                  id="messages"
+                  className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
+                >
+                  <div className="chat-message">
+                    <div className="flex items-end justify-end">
+                      <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+                        <div>
+                          <ul>
+                            {submittedAnswer.map((a, index) => (
+                              <li
+                                key={index}
+                                className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white "
+                              >
+                                {a}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <img
+                        src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                        alt="My profile"
+                        className="w-6 h-6 rounded-full order-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <form onSubmit={handleSubmit}>
+                  <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
+                    <input
+                      id="answer"
+                      name="answer"
+                      type="text"
+                      value={answer.answer}
+                      onChange={(e) => setAnswer(e.target.value)}
+                      placeholder="Help the team!"
+                      className="w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
+                    />
+                    <div className="absolute right-0 items-center inset-y-0 hidden sm:flex"></div>
+                  </div>
+                </form>
               </div>
             </div>
           ))}
