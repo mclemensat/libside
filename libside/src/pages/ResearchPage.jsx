@@ -1,7 +1,7 @@
-import ResearchCard from "../components/ResearchCard";
-import SearchBar from "../components/SearchBar";
+import ResearchCard from "@components/ResearchCard";
+import SearchBar from "@components/SearchBar";
 
-import ReactLogo from "../assets/react_original_logo_icon_146374.png";
+import ReactLogo from "@assets/react_original_logo_icon_146374.png";
 
 function ResearchPage({}) {
   return (
