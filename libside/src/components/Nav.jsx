@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../assets/logo.png"
+import logo from "@assets/logo.png";
 
 export default function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -39,7 +39,6 @@ export default function Nav() {
               </svg>
             </div>
             <ul className="flex flex-col items-center justify-between min-h-[250px]">
-             
               <li className="border-b border-gray-400 ">
                 <a href="/">About</a>
               </li>
@@ -54,7 +53,11 @@ export default function Nav() {
         </section>
 
         <ul className="DESKTOP-MENU hidden space-x-16 lg:flex md:p-4">
-        <li><button className=" w-16 h-16 rounded-full bg-gray-500 ">Team BX</button></li>
+          <li>
+            <button className=" w-16 h-16 rounded-full bg-gray-500 ">
+              Team BX
+            </button>
+          </li>
           <li>
             <a href="/">About</a>
           </li>
