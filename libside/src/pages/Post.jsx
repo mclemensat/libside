@@ -162,9 +162,7 @@ export default function Post() {
                               </a>
                             </p>
                             <div className="flex text-center space-x-1 text-sm text-gray-500">
-                              <time>Mar 20, 2020</time>
-                              <span aria-hidden="true">&middot;</span>
-                              <span>4 min read</span>
+                              <time>Jul 01, 2022</time>
                             </div>
                           </div>
                         </div>
