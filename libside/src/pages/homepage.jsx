@@ -6,11 +6,10 @@ import NewsBoard from "@components/NewsBoard";
 function HomePage() {
   return (
     <div className="">
-      <div></div>
       <div className="flex flex-around p-10 w-full">
         <div className="py-20  ">
           <SearchBar />
-          <PostComponent />
+          {/* <PostComponent /> */}
           <CardTown />
         </div>
 
