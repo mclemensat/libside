@@ -48,21 +48,7 @@ const posts = [
 
 export default function CardTown() {
   const [answer, setAnswer] = useState({});
-  console.log(answer);
   const [submittedAnswer, setSubmittedAnswer] = useState([]);
-  console.log(submittedAnswer);
-
-  // const handleChange = ({ value }) => {
-  //   setAnswer({ ...answer, value });
-  //   //   ...submittedAnswer.map((ans) => {
-  //   //     if (ans.id) {
-  //   //       return { ...ans, [key]: value };
-  //   //     }
-
-  //   //     return ans;
-  //   //   }),
-  //   // ]);
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
