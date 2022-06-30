@@ -27,40 +27,26 @@ function SearchBar() {
   };
 
   const firstOptions = [
-    { label: "1", value: "1" },
-    { label: "2", value: "2" },
-    { label: "3", value: "3" },
-    { label: "4", value: "4" },
-    { label: "5", value: "5" },
+    { label: "JavaScript", value: "JavaScript" },
+    { label: "PHP", value: "PHP" },
+    { label: "Java", value: "Java" },
+    { label: "C++", value: "C++" },
+    { label: "Ruby", value: "Ruby" },
   ];
   const secondOptions = [
-    { label: "1", value: "1" },
-    { label: "2", value: "2" },
-    { label: "3", value: "3" },
-    { label: "4", value: "4" },
-    { label: "5", value: "5" },
-  ];
-  const thirdOptions = [
-    { label: "1", value: "1" },
-    { label: "2", value: "2" },
-    { label: "3", value: "3" },
-    { label: "4", value: "4" },
-    { label: "5", value: "5" },
-  ];
-  const fourthOptions = [
-    { label: "1", value: "1" },
-    { label: "2", value: "2" },
-    { label: "3", value: "3" },
-    { label: "4", value: "4" },
-    { label: "5", value: "5" },
+    { label: "React", value: "React" },
+    { label: "Vue", value: "Vue" },
+    { label: "Angular", value: "Angular" },
+    { label: "Node", value: "Node" },
+    { label: "Next", value: "Next" },
   ];
   return (
-    <div className="flex flex-col border-2 border-black w-fit mx-auto rounded-lg">
-      <form className="text-center justify-center p-4" onSubmit={handleSubmit}>
+    <div className="flex flex-col w-fit m-4 p-2  rounded-xl ring ring-indigo-50">
+      <form className="text-center p-4" onSubmit={handleSubmit}>
         <div className="flex flex-wrap">
           <div className="text-black mr-6">
             <label htmlFor="first" className="text-xl">
-              First Options
+              Select language
             </label>
             <Select
               className="w-54"
@@ -82,33 +68,39 @@ function SearchBar() {
               onChange={(e) => setSecondSearchValue(e.value)}
             />
           </div>
-          <div className="text-black mr-6">
+          <div className="flex flex-col text-black mr-6">
             <label htmlFor="third" className="text-xl">
               Third Options
             </label>
-            <Select
-              className="w-54"
-              placeholder="Choose"
-              options={thirdOptions}
-              name="third"
-              onChange={(e) => setThirdSearchValue(e.value)}
-            />
-          </div>
-          <div className="text-black mr-6">
-            <label htmlFor="fourth" className="text-xl">
-              Fourth Options
-            </label>
-            <Select
-              className="w-54"
-              placeholder="Choose"
-              options={fourthOptions}
-              name="fourth"
-              onChange={(e) => setFourthSearchValue(e.value)}
-            />
+            <input
+              className="
+              block
+              w-96
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:border-2 focus:bg-white focus:border-blue-500  focus:outline-none
+            "
+              id="component name researched"
+              name="component name researched"
+              onChange={(e) => setThirdSearchValue(e.target.value)}
+              type="text"
+              placeholder="Component name"
+              required
+              value={thirdSearchValue}
+            />{" "}
           </div>
         </div>
         <input
-          className="drop-shadow-lg border-2 border-[#E1F5F8] bg-[#E1F5F8] text-black rounded-xl p-1 px-3 mt-3 hover:bg-gray-200 hover:text-gray-900 cursor-pointer"
+          className="drop-shadow-lg border-2 border-[#E1F5F8] bg-[#E1F5F8] text-black rounded-xl p-1 px-3 mt-6 hover:bg-gray-200 hover:text-gray-900 cursor-pointer"
           type="submit"
           value="Search"
         />
