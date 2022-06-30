@@ -55,15 +55,15 @@ function SearchBar() {
     { label: "5", value: "5" },
   ];
   return (
-    <div className="flex flex-col border-2 border-black w-fit rounded-lg">
+    <div className="flex flex-col border-2 border-black w-fit mx-auto rounded-lg">
       <form className="text-center justify-center p-4" onSubmit={handleSubmit}>
-        <div className="flex">
+        <div className="flex flex-wrap">
           <div className="text-black mr-6">
             <label htmlFor="first" className="text-xl">
               First Options
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={firstOptions}
               name="first"
@@ -75,7 +75,7 @@ function SearchBar() {
               Second Options
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={secondOptions}
               name="second"
@@ -87,7 +87,7 @@ function SearchBar() {
               Third Options
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={thirdOptions}
               name="third"
@@ -99,7 +99,7 @@ function SearchBar() {
               Fourth Options
             </label>
             <Select
-              className="w-64"
+              className="w-54"
               placeholder="Choose"
               options={fourthOptions}
               name="fourth"

@@ -6,16 +6,24 @@ import CardTown from "../components/CardTown.jsx";
 
 function HomePage() {
   return (
-    <div className="text-center">
+    <div className="">
+      <div>
      <Nav/>
+     </div>
+    <div className="flex flex-around p-10 w-full">
+     
+    <div className="py-20  ">			
+     <SearchBar /> 
+    <CardTown />
+    </div> 
+      
+      <div className="md:w-1/4 md:right-0 md:absolute">
      <News/>
-      <h1 className="text-primary font-poppins">Coucou text de police </h1>
-      <p className="text-secondary font-raleway">Let's code !!</p>
-      <SearchBar />
-      <div className="bottom-0 fixed">
-        <CardTown />
+
+		</div> 
       </div>
-    </div>
+      </div>
+  
 
   );
 }
