@@ -1,22 +1,23 @@
-
 import SearchBar from "@components/SearchBar";
 import CardTown from "@components/CardTown.jsx";
-import PostComponent from "@components/PostComponent";
+// import PostComponent from "@components/PostComponent";
 import NewsBoard from "@components/NewsBoard";
 
 function HomePage() {
   return (
-    <div className="">
-      <div className="flex flex-around p-10 w-full">
-        <div className="py-20  ">
+    <div className="flex justify-center">
+      <div className="flex flex-col">
+        <div className="z-40">
           <SearchBar />
+        </div>
+
+        <div>
           {/* <PostComponent /> */}
           <CardTown />
         </div>
-
-        <div className="md:w-1/4 md:right-0 md:absolute">
-          <NewsBoard />
-        </div>
+      </div>
+      <div className="mx-8 my-10">
+        <NewsBoard />
       </div>
     </div>
   );
