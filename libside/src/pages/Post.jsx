@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Nav from "@components/Nav";
 import CSS from "@assets/file_type_css_icon_130661.png";
 import Modal from "@components/Modal";
@@ -7,7 +8,6 @@ export default function Post() {
   const [newPost, setNewPost] = useState({});
   const [submittedPosts, setSubmittedPosts] = useState([]);
   const [shoMyModal,setShowMyModal]=useState(false)
-
 
   const handleChange = ({ target: { name, value } }) => {
     setNewPost({ ...newPost, [name]: value });
