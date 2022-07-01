@@ -8,7 +8,9 @@ import ReactLogo from "@assets/react_original_logo_icon_146374.png";
 function ResearchPage({}) {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl text-center">Research Results :</h1>
+        <h1 className="mt-8 mb-12 text-4xl drop-shadow-lg uppercase text-center text-primary">
+          Research Results:
+        </h1>
       <SearchBar />
 
       <div className="w-[54rem]">
