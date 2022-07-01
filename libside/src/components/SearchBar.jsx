@@ -41,41 +41,41 @@ function SearchBar() {
     { label: "Next", value: "Next" },
   ];
   return (
-    <div className="flex flex-col w-fit m-4 rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
+    <div className="flex flex-col w-9/10 m-4 rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
       <form className="text-center p-4" onSubmit={handleSubmit}>
         <div className="flex flex-wrap">
-          <div className="text-black mr-6">
-            <label htmlFor="first" className="text-xl text-start">
+          <div className="text-black mr-6  w-1/4">
+            <label htmlFor="first" className="text-xl text-center inline-block p-0 h-16">
               Select language
             </label>
             <Select
-              className="w-64"
+              className="w-auto"
               placeholder="Choose"
               options={firstOptions}
               name="first"
               onChange={(e) => setFirstSearchValue(e.value)}
             />
           </div>
-          <div className="text-black mr-6">
-            <label htmlFor="second" className="text-xl text-start">
+          <div className="text-black mr-6 w-1/4">
+            <label htmlFor="second" className="text-xl text-center block h-16">
               Select Framework
             </label>
             <Select
-              className="w-64"
+              className="w-auto"
               placeholder="Choose"
               options={secondOptions}
               name="second"
               onChange={(e) => setSecondSearchValue(e.value)}
             />
           </div>
-          <div className="flex flex-col text-black mr-6">
-            <label htmlFor="third" className="text-xl">
+          <div className="flex flex-col text-black mr-6 w-1/3">
+            <label htmlFor="third" className="text-xl block text-center align-text-bottom  h-16">
               Researched Component
             </label>
             <input
               className="
               block
-              w-96
+              w-auto
               px-3
               py-1.5
               text-base
