@@ -61,7 +61,7 @@ function SearchBar() {
           </div>
           <div className="text-black mr-6 w-1/4">
             <label htmlFor="second" className="text-xl text-center block h-16">
-              Select Framework
+              Select Library
             </label>
             <Select
               className="w-auto"

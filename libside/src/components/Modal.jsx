@@ -24,7 +24,7 @@ export default function Modal({ visible, onClose }) {
             clipRule="evenodd"
           />
         </svg>
-        <p className="text-xl mb-4 font-bold text-primary">Item sent!</p>
+        <p className="text-xl mb-4 font-bold text-primary">Post sent!</p>
 
         <button
           onClick={handleOnClick}
