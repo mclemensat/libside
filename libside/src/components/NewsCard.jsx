@@ -1,6 +1,6 @@
 function NewsCard({ city, techno1, techno2, title, text }) {
   return (
-    <div className="flex flex-col m-2 p-2 overflow-hidden border bg-gray-50 border-gray-100 rounded-lg group sm:grid-cols-3">
+    <div className="flex flex-col m-2 p-2 overflow-hidden border bg-gray-50 border-gray-100 rounded-lg group sm:grid-cols-3 shadow-lg">
       <h1 className="text-lg font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
         {city}
       </h1>

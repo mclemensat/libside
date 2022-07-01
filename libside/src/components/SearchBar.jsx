@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Select from "react-select";
 
 function SearchBar() {
@@ -8,9 +10,10 @@ function SearchBar() {
   const [thirdSearchValue, setThirdSearchValue] = useState("");
   const [FourthSearchValue, setFourthSearchValue] = useState("");
 
-  console.log(savedSearch);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    navigate("/research");
     e.preventDefault();
 
     setSavedSearch([
@@ -94,7 +97,6 @@ function SearchBar() {
               onChange={(e) => setThirdSearchValue(e.target.value)}
               type="text"
               placeholder="Component name"
-              required
               value={thirdSearchValue}
             />{" "}
           </div>

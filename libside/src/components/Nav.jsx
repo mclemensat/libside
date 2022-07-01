@@ -7,7 +7,7 @@ import logo from "@assets/logo.png";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
-  imageUrl: "./src/assets/icon_nav.png",
+  imageUrl: "https://avatars2.githubusercontent.com/u/1490347?s=460&u=39d7a6b9bc030244e2c509119e5f64eabb2b1727&v=4",
 };
 const navigation = [{ name: "Write an article", href: "#", current: true }];
 const userNavigation = [
@@ -57,7 +57,7 @@ export default function Example() {
                       className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-slate-200 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
                     >
                       <PlusSmIcon
-                        className="-ml-1 mr-2 h-5 w-5"
+                        className="-ml-1 h-5 w-5"
                         aria-hidden="true"
                       />
                       <span>Write an article</span>
@@ -68,7 +68,7 @@ export default function Example() {
                   <Menu as="div" className="ml-3 relative">
                     <div>
                       <img
-                        className="h-8 w-8 rounded-full bg-secondary "
+                        className="h-10 w-10 rounded-full bg-secondary "
                         src={user.imageUrl}
                         alt=""
                       />
@@ -98,11 +98,11 @@ export default function Example() {
                 </Disclosure.Button>
               ))}
             </div>
-            <div className="pt-4 pb-3 ">
+            <div className="pt-4 pb-3">
               <div className="flex items-center px-5 sm:px-6">
-                <div className="flex-shrink-0 ">
+                <div className="">
                   <img
-                    className="h-8 w-8  rounded-full "
+                    className="h-8 w-8 rounded-full"
                     src={user.imageUrl}
                     alt=""
                   />
