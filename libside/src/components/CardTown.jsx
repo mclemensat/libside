@@ -53,9 +53,9 @@ export default function CardTown() {
           {posts.map((post) => (
             <div
               key={post.title}
-              className="flex flex-col bg-white  rounded-lg shadow-lg overflow-hidden"
+              className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="flex-1 mb-3 bg-white border-b-2 border-dotted border-gray-100 p-6 flex flex-col justify-between">
+              <div className="flex-1 mb-3 bg-white p-6 flex flex-col justify-between">
                 <div>
                   <p className="text-sm font-medium text-primary">
                     <a href={post.category.href} className="hover:underline">
@@ -106,7 +106,7 @@ export default function CardTown() {
                   <div className="flex items-end justify-end">
                     <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end"></div>
                     <img
-                      src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                      src="https://avatars2.githubusercontent.com/u/1490347?s=460&u=39d7a6b9bc030244e2c509119e5f64eabb2b1727&v=4"
                       alt="My profile"
                       className="w-6 h-6 rounded-full order-2"
                     />
@@ -136,7 +136,7 @@ export default function CardTown() {
           >
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
               <div>
-                <p className="text-sm font-medium text-indigo-600">
+                <p className="text-sm font-medium text-primary">
                   <a href="" className="hover:underline">
                     Component
                   </a>
@@ -199,7 +199,7 @@ export default function CardTown() {
                       </div>
                     </div>
                     <img
-                      src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
+                      src="https://avatars2.githubusercontent.com/u/1490347?s=460&u=39d7a6b9bc030244e2c509119e5f64eabb2b1727&v=4"
                       alt="My profile"
                       className="w-6 h-6 rounded-full order-2"
                     />

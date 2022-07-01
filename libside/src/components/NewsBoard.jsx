@@ -9,7 +9,7 @@ function NewsBoard() {
         techno2={"React"}
         title={"Facial recognization app"}
         text={
-          "develops software that verifies the identity of people by combining an identity document with a photo, a selfie and artificial intelligence algorithms."
+          "Develops software that verifies the identity of people by combining an identity document with a photo, a selfie and artificial intelligence algorithms."
         }
       />
       <NewsCard
@@ -18,7 +18,7 @@ function NewsBoard() {
         techno2={"Red Hat"}
         title={"BigData for science"}
         text={
-          "develops of data acquisition and post-processing software for transmission electron microscopes."
+          "Develops of data acquisition and post-processing software for transmission electron microscopes."
         }
       />
       <NewsCard
@@ -27,7 +27,7 @@ function NewsBoard() {
         techno2={"Symphony"}
         title={"Game recruitment"}
         text={
-          "develops a game prototype to recruit atypical profiles in the digital professions"
+          "Develops a game prototype to recruit atypical profiles in the digital professions."
         }
       />
       <NewsCard
@@ -36,7 +36,7 @@ function NewsBoard() {
         techno2={"Django"}
         title={"Digitalized human emotions"}
         text={
-          "develops software for emotion identification services, using deep learning techniques in combination with physiological data such as pulse sensor and facial recognition"
+          "Develops software for emotion identification services, using deep learning techniques in combination with physiological data such as pulse sensor and facial recognition."
         }
       />
     </div>

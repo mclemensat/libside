@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import ResearchCard from "@components/ResearchCard";
 import SearchBar from "@components/SearchBar";
 
@@ -10,6 +12,7 @@ function ResearchPage({}) {
       <SearchBar />
 
       <div className="w-[54rem]">
+        <Link to="/component-details">
         <ResearchCard
           imgSrc={ReactLogo}
           agencyLocation={"Starsbourg"}
@@ -19,7 +22,8 @@ function ResearchPage({}) {
           }
           creationDate={"1 Weeks ago"}
           creatorName={"Francis Gerard, Nolwen Moutarde"}
-        />
+          />
+          </Link>
         <ResearchCard
           imgSrc={ReactLogo}
           agencyLocation={"Nantes"}
