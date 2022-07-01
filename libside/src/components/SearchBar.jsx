@@ -46,7 +46,7 @@ function SearchBar() {
   return (
     <div className="flex flex-col w-9/10 m-4 rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
       <form className="text-center p-4" onSubmit={handleSubmit}>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center">
           <div className="text-black mr-6  w-1/4">
             <label htmlFor="first" className="text-xl text-center inline-block p-0 h-16">
               Select language
