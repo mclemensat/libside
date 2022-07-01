@@ -47,7 +47,7 @@ export default function CardTown() {
   };
 
   return (
-    <div className="rounded-xl backdrop-blur-xl ring-1 ring-gray-300 p-6">
+    <div className="p-6">
       <div className="relative max-w-4xl mx-auto">
         <div className="max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
