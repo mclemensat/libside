@@ -1,93 +1,137 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Disclosure, Menu } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { PlusSmIcon } from "@heroicons/react/solid";
 import logo from "@assets/logo.png";
 
-export default function Nav() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+const user = {
+  name: "Tom Cook",
+  email: "tom@example.com",
+  imageUrl: "./src/assets/icon_nav.png",
+};
+const navigation = [{ name: "Write an article", href: "#", current: true }];
+const userNavigation = [
+  { name: "Your Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Sign out", href: "#" },
+];
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+export default function Example() {
   return (
-    <div className="flex items-center justify-between border-b border-gray-400 py-6">
-      <a href="/">
-        <img className="w-20 h-20" src={logo} alt="logo" />
-      </a>
-      <nav>
-        <section className="MOBILE-MENU flex lg:hidden">
-          <div
-            className="HAMBURGER-ICON space-y-2"
-            onClick={() => setIsNavOpen((prev) => !prev)}
-          >
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          </div>
-
-          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-            <div
-              className="absolute top-0 right-0 px-8 py-8"
-              onClick={() => setIsNavOpen(false)}
-            >
-              <svg
-                className="h-8 w-8 text-gray-600"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+    <Disclosure as="nav" className="bg-primary">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16">
+              <div className="flex">
+                <div className="-ml-2 mr-2 flex items-center md:hidden">
+                  {/* Mobile menu button */}
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
+                <div className="flex-shrink-0 flex items-center">
+                  <Link to="/">
+                    <img
+                      className="lg:block h-12 w-12"
+                      src={logo}
+                      alt="Workflow"
+                    />
+                  </Link>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="flex-shrink-0">
+                  <Link to="/post">
+                    <button
+                      type="button"
+                      className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-slate-200 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+                    >
+                      <PlusSmIcon
+                        className="-ml-1 mr-2 h-5 w-5"
+                        aria-hidden="true"
+                      />
+                      <span>Write an article</span>
+                    </button>
+                  </Link>
+                </div>
+                <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
+                  <Menu as="div" className="ml-3 relative">
+                    <div>
+                      <img
+                        className="h-8 w-8 rounded-full bg-secondary "
+                        src={user.imageUrl}
+                        alt=""
+                      />
+                    </div>
+                  </Menu>
+                </div>
+              </div>
             </div>
-            <ul className="flex flex-col items-center justify-between min-h-[250px]">
-              <li className="border-b border-gray-400 ">
-                <a href="/">About</a>
-              </li>
-              <li className="border-b border-gray-400 ">
-                <a href="/post">Page1</a>
-              </li>
-              <li className="border-b border-gray-400">
-                <a href="/">Page2</a>
-              </li>
-            </ul>
           </div>
-        </section>
 
-        <ul className="DESKTOP-MENU hidden space-x-16 lg:flex md:p-4">
-          <li>
-            <button className=" w-16 h-16 rounded-full bg-gray-500 ">
-              Team BX
-            </button>
-          </li>
-          <li>
-            <a href="/">About</a>
-          </li>
-          <li>
-            <a href="/post">Page1</a>
-          </li>
-          <li>
-            <a href="/">page2</a>
-          </li>
-        </ul>
-      </nav>
-      <style>{`
-      .hideMenuNav {
-        display: none;
-      }
-      .showMenuNav {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: white;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-    `}</style>
-    </div>
+          <Disclosure.Panel className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+            <div className="pt-4 pb-3 ">
+              <div className="flex items-center px-5 sm:px-6">
+                <div className="flex-shrink-0 ">
+                  <img
+                    className="h-8 w-8  rounded-full "
+                    src={user.imageUrl}
+                    alt=""
+                  />
+                </div>
+                <div className="ml-3">
+                  <div className="text-base font-medium text-white">
+                    {user.name}
+                  </div>
+                  <div className="text-sm font-medium text-gray-400">
+                    {user.email}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 px-2 space-y-1 sm:px-3">
+                {userNavigation.map((item) => (
+                  <Disclosure.Button
+                    key={item.name}
+                    as="a"
+                    href={item.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                ))}
+              </div>
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 }

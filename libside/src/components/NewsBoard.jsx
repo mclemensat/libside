@@ -5,7 +5,8 @@ function NewsBoard() {
     <div className="flex flex-col items-center w-96 rounded-xl backdrop-blur-xl ring-1 ring-gray-300">
       <NewsCard
         city={"Rennes"}
-        techno={"React"}
+        techno1={"JavaScript"}
+        techno2={"React"}
         title={"Facial recognization app"}
         text={
           "develops software that verifies the identity of people by combining an identity document with a photo, a selfie and artificial intelligence algorithms."
@@ -13,7 +14,8 @@ function NewsBoard() {
       />
       <NewsCard
         city={"Montpellier"}
-        techno={"Java"}
+        techno1={"Java"}
+        techno2={"Red Hat"}
         title={"BigData for science"}
         text={
           "develops of data acquisition and post-processing software for transmission electron microscopes."
@@ -21,7 +23,8 @@ function NewsBoard() {
       />
       <NewsCard
         city={"Brest"}
-        techno={"PHP"}
+        techno1={"PHP"}
+        techno2={"Symphony"}
         title={"Game recruitment"}
         text={
           "develops a game prototype to recruit atypical profiles in the digital professions"
@@ -29,7 +32,8 @@ function NewsBoard() {
       />
       <NewsCard
         city={"Dijon"}
-        techno={"Python"}
+        techno1={"Python"}
+        techno2={"Django"}
         title={"Digitalized human emotions"}
         text={
           "develops software for emotion identification services, using deep learning techniques in combination with physiological data such as pulse sensor and facial recognition"

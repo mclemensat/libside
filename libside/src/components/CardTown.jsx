@@ -132,7 +132,7 @@ export default function CardTown() {
 
           <div
             key=""
-            className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+            className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden"
           >
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
               <div>
